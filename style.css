@@ -31,6 +31,12 @@ body, .drop-zone{
     border: dashed 2px var(--drop-zone-color);
     margin: 30px;
     border-radius: 10px;
+    transition: all .2s ease;
+}
+
+.dragged.drop-zone{
+    background-color: var(--main-bg-color);
+    border-color: blue;
 }
 
 .icons{
@@ -39,11 +45,39 @@ body, .drop-zone{
     height: 100px;
 }
 
+
 .icons img{
     width: 75px;
     position: absolute; 
+    transform-origin: bottom;
+    transition: transform 230ms ease-in-out ;
 }
 
 .center{
 z-index: 2;
+}
+
+.icons .right, .icons .left{
+    filter: grayscale(.5);
+    transform: scale(.9);
+}
+.dragged .icons .right{
+    transform: rotate(10deg) translateX(20px) scale(.9);
+}
+
+.dragged .icons .left{
+    transform: rotate(-10deg) translateX(-20px) scale(.9);
+}
+
+.dragged .icons .center{
+    transform: translateY(-5px);
+}
+
+.fileInput{
+    display: none;
+}
+
+.browse{
+    color: blue;
+    cursor: pointer;
 }
