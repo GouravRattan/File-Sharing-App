@@ -1,24 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>U-sHare - Easy-File-sharing</title>
-</head>
-<body>
-     <section class="upload-Container">
-        <div class="drop-zone">
-            <div class="icons">
-                <img src="./file.svg" alt="file-icon" class="center" draggable="false">
-                <img src="./file.svg" alt="file-icon" class="right" draggable="false">
-                <img src="./file.svg" alt="file-icon" class="left" draggable="false">
-            </div>
-            <input type="file" class="fileInput">
-            <div class="title">Drop your file here or, <span class="browse">Browse</span></div>
+  </head>
+
+  <body>
+    <section class="upload-Container">
+      <div class="drop-zone">
+        <div class="icons">
+          <img
+            src="./file.svg"
+            alt="file-icon"
+            class="center"
+            draggable="false"
+          />
+          <img
+            src="./file.svg"
+            alt="file-icon"
+            class="right"
+            draggable="false"
+          />
+          <img
+            src="./file.svg"
+            alt="file-icon"
+            class="left"
+            draggable="false"
+          />
         </div>
-     </section>
-     <script src="Index.js"></script>
-</body>
+        <input type="file" class="fileInput" />
+        <div class="title">
+          Drop your file here or, <span class="browse">Browse</span>
+        </div>
+      </div>
+
+      <div class="progress-container">
+        <div class="bg-progress">
+          <div class="inner-conatainer">
+            <div class="title">Uploading...</div>
+            <div class="percent-Container"><span id="percent">0</span>%</div>
+            <div class="progress-bar"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sharing-container">
+        <p class="expire">link expires in 24 hrs</p>
+        <div class="input-container">
+            <input type="text" id="fileURL" readonly>
+            <img src="./copy-icon.svg" alt="copy-icon" id="copyBtn">
+        </div>
+      </div>
+    </section>
+    <script src="Index.js"></script>
+  </body>
 </html>

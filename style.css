@@ -2,6 +2,7 @@
 
     --main-bg-color: #eff5fe;
     --drop-zone-color: #0288d147;
+    --conatienr-width: 500px; 
 }
 
 body, html{
@@ -12,7 +13,7 @@ body, html{
     height: 100%;
 }
 
-body, .drop-zone{
+body, .drop-zone,.upload-Container{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,7 +27,7 @@ body, .drop-zone{
 }
 
 .drop-zone{
-    width: 500px;
+    width: var(--conatienr-width);
     min-height: 250px; 
     border: dashed 2px var(--drop-zone-color);
     margin: 30px;
@@ -79,5 +80,84 @@ z-index: 2;
 
 .browse{
     color: blue;
+    cursor: pointer;
+}
+
+.progress-container{
+ width: var(--conatienr-width);
+ height: 70px;
+ border: 2px solid var(--main-bg-color);
+ margin-bottom: 25px;
+ border-radius: 10px;
+ position: relative;
+ display: none;
+}
+
+.progress-container .bg-progress{
+    background-color: var(--main-bg-color);
+    width: 0%;
+    height: 100%;
+    border-radius: 3%;
+    transition: width .25s linear;
+    
+}
+
+.progress-container .inner-conatainer{
+    position: absolute;
+    margin: 10px 15px;
+   width: calc(100% - 30px);
+}
+
+.percent-Container{
+    font-size: 13px;
+    margin-top: 3px;
+    opacity: .8;
+}
+
+.progress-bar{
+    height: 3px;
+    width: 100%;
+    background-color: blue;
+    border-radius: 2px;
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: all .25s linear;
+}
+
+.sharing-container{
+    width: var(--conatienr-width);
+    margin-bottom: 10px;
+    display: none;
+}
+
+.sharing-container .input-container{
+    position: relative;
+}
+
+.sharing-container .input-container input{
+    width: 100%;
+    width: var(--conatienr-width);
+    border: dashed 2px var(--drop-zone-color);
+    border-radius: 3px;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    font-size: 20px;
+    background-color: #f5fcff;
+    color: #0000008c;
+}
+
+p.expire{
+opacity: .7;
+text-align: center;
+margin-bottom: 20px;
+}
+
+.input-container img{
+    height: 20px;
+    position: absolute;
+    width: 30px;
+    right: 7px;
+    top: 15px;
+    box-flex-group: #f7fdff;
     cursor: pointer;
 }
